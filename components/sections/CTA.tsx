@@ -76,7 +76,7 @@ export const CTA = forwardRef<HTMLElement>(function CTA(_, ref) {
           </Link>
         </div>
         <p className="mt-8 text-sm text-muted sm:mt-10">
-          Sin compromiso. Te respondemos pronto.
+          Te respondemos pronto.
         </p>
 
         {/* Texto principal (recuadro glass blur) + bullets animados */}

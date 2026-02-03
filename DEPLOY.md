@@ -9,6 +9,7 @@ Sigue estos pasos en orden. Todo lo que debes hacer tú está marcado como **TÚ
 - [x] El proyecto tiene `.gitignore` correcto (no se suben `node_modules`, `.next`, etc.).
 - [x] Los scripts `build`, `start` y `dev` están en `package.json`.
 - [x] El build de Next.js funciona (`npm run build`).
+- [x] El sitio está optimizado para Vercel: **export estático** (sin funciones serverless, mínimo uso de recursos).
 
 No necesitas cambiar nada en el código para GitHub ni para Vercel.
 

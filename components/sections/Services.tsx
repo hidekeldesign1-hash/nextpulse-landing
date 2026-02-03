@@ -1,26 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ImagePlaceholder } from "../ui/ImagePlaceholder";
 
 const services = [
   {
-    title: "Tu marca clara y profesional",
+    title: "Tu negocio con presencia profesional",
     description:
-      "Definimos cómo se ve y se comunica tu negocio para que las personas confíen en ti desde el primer vistazo.",
+      "Creamos diseños atractivos y profesionales que generan confianza en tus clientes desde el primer vistazo.",
     icon: "◆",
+    image: "/servicio-presencia-profesional.png",
+    imagePosition: "15%",
   },
   {
     title: "Anuncios que traen clientes",
     description:
       "Creamos campañas simples y efectivas para que más personas te contacten y conozcan tu negocio.",
     icon: "◇",
+    image: "/servicio-anuncios-clientes.png",
+    imagePosition: "60%",
   },
   {
     title: "Tu negocio visible en internet",
     description:
       "Preparamos tu página y contenido para que las personas te encuentren fácilmente en internet.",
     icon: "○",
+    image: "/servicio-negocio-visible-internet.png",
+    imagePosition: "50%",
   },
 ];
 
@@ -80,12 +87,29 @@ export function Services() {
               className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:border-accent/20 hover:bg-surface-elevated hover:shadow-glow-sm sm:rounded-2xl"
             >
               <div className="shrink-0 p-3 pb-0 sm:p-4 sm:pb-0 lg:p-5 lg:pb-0">
-                <ImagePlaceholder
-                  aspectRatio="video"
-                  label={service.title}
-                  slot={`service-${service.title.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="w-full"
-                />
+                {"image" in service && service.image ? (
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                      style={
+                        "imagePosition" in service && service.imagePosition
+                          ? { objectPosition: `center ${service.imagePosition}` }
+                          : undefined
+                      }
+                    />
+                  </div>
+                ) : (
+                  <ImagePlaceholder
+                    aspectRatio="video"
+                    label={service.title}
+                    slot={`service-${service.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="w-full"
+                  />
+                )}
               </div>
               <div className="flex flex-1 flex-col p-5 pt-4 sm:p-6 sm:pt-5 md:p-8 md:pt-5 lg:p-10 lg:pt-6">
                 <span className="mb-3 block text-xl text-accent opacity-70 transition-opacity group-hover:opacity-100 sm:mb-4 sm:text-2xl">

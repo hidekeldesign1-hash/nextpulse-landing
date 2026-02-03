@@ -2,6 +2,7 @@
 
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 export const Hero = forwardRef<HTMLElement>(function Hero(_, ref) {
@@ -11,12 +12,15 @@ export const Hero = forwardRef<HTMLElement>(function Hero(_, ref) {
       ref={ref}
       className="relative flex min-h-screen items-center justify-center overflow-visible bg-black px-4 pt-20 pb-20 sm:px-6 sm:pt-24 sm:pb-24 md:pb-28 lg:px-8"
     >
-      {/* Capa 1: imagen de fondo (overflow solo aquí para no recortar el título) */}
+      {/* Capa 1: imagen de fondo optimizada (next/image) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
+        <Image
           src="/hero-bg.jpg"
           alt=""
-          className="h-full w-full object-cover object-center blur-[4px]"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center blur-[4px]"
         />
       </div>
       {/* Capa 2: overlay negro más fuerte para unir con el resto del sitio */}
