@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #fafafa;
+  --foreground-secondary: #e4e4e7;
+  --muted: #71717a;
+  --muted-soft: #a1a1aa;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-glow: rgba(59, 130, 246, 0.2);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-elevated: rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #fafafa;
+    --foreground-secondary: #e4e4e7;
+    --muted: #71717a;
+    --muted-soft: #a1a1aa;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-glow: rgba(59, 130, 246, 0.2);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-strong: rgba(255, 255, 255, 0.12);
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-elevated: rgba(255, 255, 255, 0.08);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: "ss01", "ss02", "cv01";
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glow-accent {
+    box-shadow: 0 0 40px -10px var(--accent-glow);
+  }
+  .glow-accent-sm {
+    box-shadow: 0 0 24px -8px var(--accent-glow);
+  }
+  .number-outline-dark {
+    -webkit-text-stroke: 2px var(--foreground);
+    color: transparent;
+  }
+  .number-outline-light {
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.9);
+    color: transparent;
+  }
+}
