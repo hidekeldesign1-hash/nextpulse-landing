@@ -20,9 +20,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Komvos | Tu negocio profesional en internet",
+  title: "Komvos Marketing Studio",
   description:
     "Creamos páginas web y soluciones digitales para que tu negocio se vea bien y consiga más clientes.",
+  icons: {
+    icon: "/favicon-k.png",
+    apple: "/favicon-k.png",
+  },
 };
 
 export default function RootLayout({

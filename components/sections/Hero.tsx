@@ -45,10 +45,7 @@ export const Hero = forwardRef<HTMLElement>(function Hero(_, ref) {
           Tu negocio en internet
         </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        <h1
           className="mb-3 overflow-visible text-[2rem] font-bold leading-[1.15] tracking-tight sm:mb-4 sm:text-4xl sm:leading-[1.12] md:text-5xl lg:text-6xl xl:text-[3.5rem]"
         >
           <span className="block text-black dark:text-white">Haz que tu negocio se vea</span>
@@ -59,7 +56,7 @@ export const Hero = forwardRef<HTMLElement>(function Hero(_, ref) {
               aria-hidden
             />
           </span>
-        </motion.h1>
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 24 }}

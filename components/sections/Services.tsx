@@ -11,7 +11,7 @@ const services = [
       "Creamos páginas web claras y bien estructuradas para que tu negocio se vea serio, confiable y fácil de contactar.",
     icon: "◆",
     image: "/servicio-presencia-profesional.png",
-    imagePosition: "15%",
+    imagePosition: "50%",
   },
   {
     title: "Anuncios que traen clientes",
@@ -19,7 +19,7 @@ const services = [
       "Diseñamos y gestionamos publicidad para que personas interesadas te escriban o te llamen, no solo para que vean tu marca.",
     icon: "◇",
     image: "/servicio-anuncios-clientes.png",
-    imagePosition: "60%",
+    imagePosition: "76%",
   },
   {
     title: "Tu negocio visible para las personas correctas",
