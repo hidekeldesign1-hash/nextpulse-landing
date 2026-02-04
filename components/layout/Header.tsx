@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,18 +19,30 @@ export function Header() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
         <Link
           href="/"
-          className="relative flex h-8 w-28 shrink-0 items-center transition-opacity hover:opacity-85 sm:h-9 sm:w-32"
+          className="relative block h-8 w-28 shrink-0 transition-opacity hover:opacity-85 sm:h-9 sm:w-32"
           onClick={closeMenu}
-          aria-label="Next Pulse - Inicio"
+          aria-label="Komvos - Inicio"
         >
-          <Image
-            src="/logo-nextpulse.png?v=2"
-            alt="Next Pulse"
-            fill
-            className="object-contain object-left"
-            sizes="(max-width: 640px) 112px, 128px"
-            priority
-          />
+          <span className="absolute inset-0 block">
+            {/* Modo claro: logo negro */}
+            <img
+              src="/logo-komvos-black.png"
+              alt="Komvos"
+              className="h-full w-full object-contain object-left dark:hidden"
+              width={128}
+              height={36}
+              decoding="async"
+            />
+            {/* Modo oscuro: logo claro */}
+            <img
+              src="/logo-komvos.png"
+              alt="Komvos"
+              className="hidden h-full w-full object-contain object-left dark:block"
+              width={128}
+              height={36}
+              decoding="async"
+            />
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -39,7 +50,7 @@ export function Header() {
           <li>
             <Link
               href="#servicios"
-              className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+              className="text-sm font-medium text-foreground transition-colors hover:text-foreground"
             >
               Servicios
             </Link>
@@ -47,7 +58,7 @@ export function Header() {
           <li>
             <Link
               href="#proceso"
-              className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+              className="text-sm font-medium text-foreground transition-colors hover:text-foreground"
             >
               Proceso
             </Link>
@@ -55,7 +66,7 @@ export function Header() {
           <li>
             <Link
               href="#contacto"
-              className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-glow-sm transition-all hover:bg-accent-hover hover:shadow-glow"
+              className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-primary shadow-glow-sm transition-all hover:bg-accent-hover hover:text-white hover:shadow-glow dark:bg-accent dark:text-white dark:hover:bg-accent-hover"
             >
               Contactar
             </Link>
@@ -97,7 +108,7 @@ export function Header() {
                 <Link
                   href="#servicios"
                   onClick={closeMenu}
-                  className="block rounded-lg py-3 px-3 text-base font-medium text-muted transition-colors hover:bg-surface hover:text-foreground"
+                  className="block rounded-lg py-3 px-3 text-base font-medium text-foreground transition-colors hover:bg-surface hover:text-foreground"
                 >
                   Servicios
                 </Link>
@@ -106,7 +117,7 @@ export function Header() {
                 <Link
                   href="#proceso"
                   onClick={closeMenu}
-                  className="block rounded-lg py-3 px-3 text-base font-medium text-muted transition-colors hover:bg-surface hover:text-foreground"
+                  className="block rounded-lg py-3 px-3 text-base font-medium text-foreground transition-colors hover:bg-surface hover:text-foreground"
                 >
                   Proceso
                 </Link>
@@ -115,7 +126,7 @@ export function Header() {
                 <Link
                   href="#contacto"
                   onClick={closeMenu}
-                  className="block rounded-full bg-accent py-3.5 text-center text-base font-medium text-white shadow-glow-sm"
+                  className="block rounded-full bg-accent py-3.5 text-center text-base font-medium text-primary shadow-glow-sm transition-colors hover:bg-accent-hover hover:text-white dark:text-white dark:hover:bg-accent-hover"
                 >
                   Contactar
                 </Link>

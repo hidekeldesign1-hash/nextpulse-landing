@@ -1,4 +1,4 @@
-# Guía: Subir a GitHub y desplegar en Vercel (Next Pulse)
+# Guía: Subir a GitHub y desplegar en Vercel (Komvos)
 
 Sigue estos pasos en orden. Todo lo que debes hacer tú está marcado como **TÚ**.
 
@@ -34,8 +34,8 @@ Para subir a GitHub necesitas **Git** en tu PC. Si al hacer el Paso 3 te sale *"
 1. Entra en **https://github.com** e inicia sesión.
 2. Clic en **"+"** (arriba a la derecha) → **"New repository"**.
 3. Rellena:
-   - **Repository name:** por ejemplo `nextpulse-landing` (o el nombre que quieras).
-   - **Description:** opcional, ej. "Landing Next Pulse".
+   - **Repository name:** por ejemplo `komvos-landing` (o el nombre que quieras).
+   - **Description:** opcional, ej. "Landing Komvos".
    - **Public**.
    - **No** marques "Add a README", "Add .gitignore" ni "Choose a license" (el proyecto ya tiene esos archivos o no los necesitas para empezar).
 4. Clic en **"Create repository"**.
@@ -95,7 +95,7 @@ git init
 
 ```bash
 git add .
-git commit -m "Primer commit: landing Next Pulse lista para Vercel"
+git commit -m "Primer commit: landing Komvos lista para Vercel"
 ```
 
 ### Paso 5: Conectar con GitHub y subir
@@ -111,7 +111,7 @@ git push -u origin main
 Sustituye:
 
 - **TU-USUARIO** → tu usuario de GitHub.
-- **TU-REPOSITORIO** → el nombre del repo (ej. `nextpulse-landing`).
+- **TU-REPOSITORIO** → el nombre del repo (ej. `komvos-landing`).
 
 Si GitHub te pide usuario y contraseña, usa un **Personal Access Token** como contraseña (no tu contraseña de la cuenta). Puedes crear uno en: GitHub → Settings → Developer settings → Personal access tokens.
 
@@ -129,7 +129,7 @@ Cuando `git push` termine, el código estará en GitHub.
 ### Paso 2: Importar el proyecto
 
 1. Clic en **"Add New..."** → **"Project"**.
-2. En la lista de repositorios, elige **nextpulse-landing** (o el nombre que hayas usado).
+2. En la lista de repositorios, elige **komvos-landing** (o el nombre que hayas usado).
 3. Clic en **"Import"**.
 
 ### Paso 3: Configuración del proyecto (dejar por defecto)
@@ -161,3 +161,25 @@ Esa URL es tu página en vivo. Cada vez que hagas `git push` a la rama `main`, V
 | Vercel | Login con GitHub → Add New → Project → elegir repo → Deploy |
 
 Si en algún paso te pide algo que no aparece aquí (por ejemplo, dominio o variables de entorno), dime en qué paso estás y lo vemos.
+
+---
+
+## Si el host no carga (página en blanco o error)
+
+1. **Revisa el deploy en Vercel**
+   - Entra en **https://vercel.com** → tu proyecto **komvos-landing**.
+   - Abre la pestaña **"Deployments"**.
+   - Clic en el **último deployment** (el de arriba).
+   - Mira el **estado**: si pone "Building" o "Error", abre los **logs** (Build Logs / Function Logs) y revisa si hay un mensaje de error en rojo.
+
+2. **Si el build falla**
+   - Copia el mensaje de error que salga en los logs y búscalo o compártelo para poder ajustar el proyecto.
+   - Comprueba que en **Settings → General** no tengas **Output Directory** puesto (debe estar vacío para Next.js).
+
+3. **Si el build termina bien pero la página no carga**
+   - Abre la URL de Vercel en **modo incógnito** o en otro navegador.
+   - Abre las **herramientas de desarrollador** (F12) → pestaña **Console** y mira si aparece algún error en rojo.
+   - Prueba otra URL: a veces la raíz es `https://tu-proyecto.vercel.app/` (con barra al final).
+
+4. **Forzar un nuevo deploy**
+   - En el proyecto en Vercel: **Deployments** → los tres puntos del último deploy → **Redeploy**.

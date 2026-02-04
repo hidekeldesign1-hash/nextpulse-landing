@@ -65,7 +65,7 @@ export function StickyCTA({ heroRef, ctaRef }: StickyCTAProps) {
         >
           <Link
             href="#contacto"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/15 bg-accent/75 px-5 py-2.5 text-sm font-medium text-white shadow-[0_0_24px_-4px_rgba(59,130,246,0.45)] backdrop-blur-md transition-colors duration-200 hover:bg-accent hover:border-accent hover:shadow-[0_0_36px_-2px_rgba(59,130,246,0.55)] focus-visible:outline-none focus-visible:bg-accent focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-base"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/15 bg-accent/75 px-5 py-2.5 text-sm font-medium text-primary shadow-[0_0_24px_-4px_var(--accent-glow)] backdrop-blur-md dark:text-white transition-colors duration-200 hover:bg-accent hover:border-accent hover:shadow-[0_0_36px_-2px_var(--accent-glow)] focus-visible:outline-none focus-visible:bg-accent focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-base"
           >
             Quiero mi página
           </Link>

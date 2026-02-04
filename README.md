@@ -1,6 +1,6 @@
-# Next Pulse Landing
+# Komvos Landing
 
-Landing de Next Pulse construida con Next.js 15 (App Router), TypeScript, Tailwind CSS y Framer Motion.
+Landing de Komvos construida con Next.js 15 (App Router), TypeScript, Tailwind CSS y Framer Motion.
 
 ## Requisitos
 

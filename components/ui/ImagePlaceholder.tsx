@@ -34,7 +34,7 @@ export function ImagePlaceholder({
       aria-hidden
     >
       <div className="flex h-full w-full items-center justify-center">
-        <span className="text-xs font-medium text-muted-soft">{label}</span>
+        <span className="text-xs font-medium text-foreground">{label}</span>
       </div>
     </div>
   );

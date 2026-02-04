@@ -58,13 +58,13 @@ export const CTA = forwardRef<HTMLElement>(function CTA(_, ref) {
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-[2.75rem]">
           ¿Listo para tener una página que sí represente tu negocio?
         </h2>
-        <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
+        <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-foreground sm:mt-6 sm:text-lg">
           Cuéntanos tu idea y te diremos cómo podemos ayudarte.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:mt-12 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
           <Link
-            href="mailto:hola@nextpulse.com"
-            className="flex min-h-[48px] items-center justify-center rounded-full bg-accent px-6 py-3.5 text-base font-medium text-white shadow-glow-sm transition-all hover:bg-accent-hover hover:shadow-glow sm:min-h-0 sm:px-8 sm:py-4"
+            href="mailto:hola@komvos.com"
+            className="flex min-h-[48px] items-center justify-center rounded-full bg-black px-6 py-3.5 text-base font-medium text-white shadow-glow-sm transition-colors duration-200 hover:bg-[#D7C9B1] hover:text-black focus-visible:bg-[#D7C9B1] focus-visible:text-black dark:bg-accent dark:text-white dark:hover:bg-accent-hover dark:hover:text-white dark:focus-visible:bg-accent-hover dark:focus-visible:text-white sm:min-h-0 sm:px-8 sm:py-4"
           >
             Quiero empezar
           </Link>
@@ -75,14 +75,14 @@ export const CTA = forwardRef<HTMLElement>(function CTA(_, ref) {
             Agendar llamada
           </Link>
         </div>
-        <p className="mt-8 text-sm text-muted sm:mt-10">
+        <p className="mt-8 text-sm text-foreground sm:mt-10">
           Te respondemos pronto.
         </p>
 
         {/* Texto principal (recuadro glass blur) + bullets animados */}
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 md:mt-24">
-          <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_24px_-4px_rgba(59,130,246,0.35)] backdrop-blur-md sm:px-8 sm:py-10 md:px-10 md:py-12">
-            <p className="mx-auto max-w-lg text-center text-base leading-relaxed text-muted sm:text-lg">
+          <div className="rounded-2xl border border-border bg-muted/40 px-6 py-8 shadow-[0_0_24px_-4px_var(--accent-glow)] backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:px-8 sm:py-10 md:px-10 md:py-12">
+            <p className="mx-auto max-w-lg text-center text-base leading-relaxed text-foreground sm:text-lg">
               No hacemos páginas solo para verse bonitas.
               <br className="hidden sm:inline" />{" "}
               <span className="mt-2 block sm:mt-1 sm:inline">
@@ -101,15 +101,15 @@ export const CTA = forwardRef<HTMLElement>(function CTA(_, ref) {
                   duration: 0.45,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-center text-base font-medium text-muted-soft sm:text-lg md:text-[1.1rem]"
+                className="text-center text-base font-medium text-foreground sm:text-lg md:text-[1.1rem]"
               >
                 {BULLETS[currentIndex]}
               </motion.p>
             </AnimatePresence>
           </div>
-          {/* Barra con glow azul (pegada a los bullets, ancho reducido) */}
+          {/* Barra con glow morado (pegada a los bullets, ancho reducido) */}
           <div
-            className="mx-auto mt-5 h-px max-w-sm bg-gradient-to-r from-transparent via-blue-500/70 to-transparent shadow-[0_0_12px_1px_rgba(59,130,246,0.35)] sm:mt-6"
+            className="mx-auto mt-5 h-px max-w-sm bg-gradient-to-r from-transparent via-accent/70 to-transparent shadow-[0_0_12px_1px_var(--accent-glow)] sm:mt-6"
             aria-hidden
           />
         </div>

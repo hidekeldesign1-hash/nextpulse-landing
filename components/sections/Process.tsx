@@ -37,7 +37,7 @@ export function Process() {
     >
       <div className="flex items-center justify-center gap-2 pt-6 sm:gap-3 sm:pt-8" aria-hidden>
         <span className="h-px w-8 bg-border-strong sm:w-12 lg:w-16" />
-        <span className="h-1 w-1 rounded-full bg-accent/60" />
+        <span className="h-1 w-1 rounded-full bg-primary dark:bg-accent/60" />
         <span className="h-px w-8 bg-border-strong sm:w-12 lg:w-16" />
       </div>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -48,13 +48,13 @@ export function Process() {
           transition={{ duration: 0.5 }}
           className="mb-10 text-center sm:mb-16 md:mb-20"
         >
-          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.18em] text-accent sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
+          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.18em] text-primary sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
             Proceso
           </p>
           <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl md:text-3xl">
             Cómo trabajamos
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted sm:mt-4">
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-foreground sm:mt-4">
             Un proceso sencillo, paso a paso.
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ export function Process() {
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className={`relative flex flex-col overflow-hidden rounded-xl px-5 py-6 shadow-lg sm:rounded-2xl sm:px-6 sm:py-8 md:flex-row md:items-center md:gap-8 md:px-8 md:py-10 lg:gap-16 lg:px-12 lg:py-12 ${
                   isAccent
-                    ? "bg-accent text-white"
+                    ? "bg-[var(--process-accent-bg)] text-[var(--process-accent-text)]"
                     : "bg-surface text-foreground dark:bg-surface-elevated"
                 }`}
               >
@@ -88,7 +88,7 @@ export function Process() {
                 <div className="relative z-10 flex-shrink-0">
                   <span
                     className={`block text-5xl font-bold tabular-nums sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl ${
-                      isAccent ? "number-outline-light" : "number-outline-dark"
+                      isAccent ? "number-outline-process" : "number-outline-dark"
                     }`}
                   >
                     {step.number}
@@ -99,14 +99,14 @@ export function Process() {
                 <div className="relative z-10 flex-1 min-w-0">
                   <h3
                     className={`mb-1.5 text-lg font-bold tracking-tight sm:mb-2 sm:text-xl md:text-2xl ${
-                      isAccent ? "text-white" : "text-foreground"
+                      isAccent ? "text-primary-foreground dark:text-white" : "text-foreground"
                     }`}
                   >
                     {step.title}
                   </h3>
                   <p
                     className={`text-sm leading-relaxed md:text-base ${
-                      isAccent ? "text-white/90" : "text-muted"
+                      isAccent ? "text-[var(--process-accent-text)]/90" : "text-foreground"
                     }`}
                   >
                     {step.description}

@@ -61,7 +61,7 @@ Cuando veas algo como **"Ready in X ms"** y **"Local: http://localhost:3000"**, 
 
 ## Paso 6: Abrir en el navegador
 
-Abre **http://localhost:3000** en Opera (o cualquier navegador). Deberías ver la landing de Next Pulse.
+Abre **http://localhost:3000** en Opera (o cualquier navegador). Deberías ver la landing de Komvos.
 
 ---
 

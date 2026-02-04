@@ -63,13 +63,13 @@ export function Services() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center sm:mb-16 md:mb-20 lg:mb-24"
         >
-          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.18em] text-accent sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
+          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.18em] text-primary sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
             Servicios
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
             Cómo te ayudamos
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted sm:mt-5 sm:text-base">
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-foreground sm:mt-5 sm:text-base">
             Te ayudamos a que tu negocio se vea bien y consiga más clientes.
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ export function Services() {
                 <h3 className="mb-2 text-lg font-semibold tracking-tight text-foreground sm:mb-3 sm:text-xl">
                   {service.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-muted">
+                <p className="text-sm leading-relaxed text-foreground">
                   {service.description}
                 </p>
               </div>
