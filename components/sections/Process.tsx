@@ -5,27 +5,27 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Conocerte",
+    title: "Conocemos tu negocio",
     description:
-      "Hablamos contigo para entender tu negocio y lo que necesitas.",
+      "Entendemos qué haces, a quién atiendes y qué necesitas mejorar.",
   },
   {
     number: "02",
-    title: "Propuesta clara",
+    title: "Creamos tu página y mensajes",
     description:
-      "Te mostramos una propuesta sencilla con tiempos y entregables claros.",
+      "Diseñamos una comunicación clara para que las personas entiendan tu servicio y te contacten.",
   },
   {
     number: "03",
-    title: "Desarrollo",
+    title: "Lanzamos tu presencia digital",
     description:
-      "Diseñamos y construimos tu página manteniéndote al tanto del avance.",
+      "Publicamos tu página y activamos la publicidad inicial.",
   },
   {
     number: "04",
-    title: "Entrega y mejora",
+    title: "Ajustamos y mejoramos",
     description:
-      "Publicamos tu proyecto y te ayudamos a mejorarlo si lo necesitas.",
+      "Revisamos qué funciona mejor y hacemos mejoras para atraer mejores clientes.",
   },
 ];
 

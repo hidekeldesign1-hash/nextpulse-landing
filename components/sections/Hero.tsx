@@ -67,7 +67,7 @@ export const Hero = forwardRef<HTMLElement>(function Hero(_, ref) {
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-black/90 dark:text-white/85 sm:mb-14 sm:text-lg"
         >
-          Creamos páginas web y soluciones digitales claras, modernas y pensadas para convertir visitas en oportunidades reales.
+          Diseñamos páginas web y publicidad claras, modernas y pensadas para que las personas correctas te contacten.
         </motion.p>
 
         <motion.div
@@ -86,7 +86,7 @@ export const Hero = forwardRef<HTMLElement>(function Hero(_, ref) {
               href="#contacto"
               className="group relative inline-flex w-full min-h-[48px] items-center justify-center rounded-full bg-black px-6 py-3.5 text-base font-semibold text-white shadow-glow-sm outline-none ring-2 ring-white/30 ring-offset-2 ring-offset-transparent transition-colors duration-200 hover:bg-[#D7C9B1] hover:text-black focus-visible:bg-[#D7C9B1] focus-visible:text-black focus-visible:ring-white dark:bg-accent dark:text-white dark:hover:bg-accent-hover dark:hover:text-white dark:focus-visible:bg-accent-hover dark:focus-visible:text-white sm:min-h-0 sm:w-auto sm:px-8 sm:py-4"
             >
-              <span className="relative z-10">Quiero mi página</span>
+              <span className="relative z-10">Platiquemos tu proyecto</span>
             </Link>
           </motion.div>
           <Link

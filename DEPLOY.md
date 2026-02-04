@@ -9,9 +9,9 @@ Sigue estos pasos en orden. Todo lo que debes hacer tú está marcado como **TÚ
 - [x] El proyecto tiene `.gitignore` correcto (no se suben `node_modules`, `.next`, etc.).
 - [x] Los scripts `build`, `start` y `dev` están en `package.json`.
 - [x] El build de Next.js funciona (`npm run build`).
-- [x] El sitio está optimizado para Vercel: **export estático** (sin funciones serverless, mínimo uso de recursos).
+- [x] El sitio está listo para Vercel (Next.js con API routes para el formulario "Agendar llamada").
 
-No necesitas cambiar nada en el código para GitHub ni para Vercel.
+No necesitas cambiar nada en el código para GitHub. **En Vercel sí debes añadir la variable de entorno** (ver más abajo).
 
 ---
 
@@ -132,17 +132,24 @@ Cuando `git push` termine, el código estará en GitHub.
 2. En la lista de repositorios, elige **komvos-landing** (o el nombre que hayas usado).
 3. Clic en **"Import"**.
 
-### Paso 3: Configuración del proyecto (dejar por defecto)
+### Paso 3: Configuración del proyecto y variable de entorno
 
 Vercel detecta Next.js y suele dejar:
 
 - **Framework Preset:** Next.js
 - **Root Directory:** ./
-- **Build Command:** `npm run build` (o `next build`)
-- **Output Directory:** (vacío, Next.js lo gestiona)
+- **Build Command:** `npm run build`
+- **Output Directory:** (vacío)
 - **Install Command:** `npm install`
 
-No hace falta cambiar nada salvo que tengas algo muy específico. Si no usas variables de entorno, deja **Environment Variables** vacío.
+**Importante:** Añade la variable de entorno para que el formulario "Agendar llamada" envíe los datos a tu Google Sheet:
+
+1. En la misma pantalla de importación, abre **Environment Variables**.
+2. **Name:** `GOOGLE_SHEETS_WEBAPP_URL`
+3. **Value:** la URL de tu aplicación web de Google Apps Script (la que termina en `/exec`). Ejemplo:  
+   `https://script.google.com/macros/s/AKfycbx.../exec`
+4. Asegúrate de que esté aplicada a **Production** (y opcionalmente Preview).
+5. Si ya desplegaste antes, después de añadirla ve a **Settings → Environment Variables** y haz **Redeploy** del último deployment para que la tome.
 
 ### Paso 4: Desplegar
 
@@ -183,3 +190,18 @@ Si en algún paso te pide algo que no aparece aquí (por ejemplo, dominio o vari
 
 4. **Forzar un nuevo deploy**
    - En el proyecto en Vercel: **Deployments** → los tres puntos del último deploy → **Redeploy**.
+
+---
+
+## Cambiar el nombre del proyecto en Vercel (ej. a "komvostudio")
+
+Si tu proyecto en Vercel se llama **nextpulse-landing** y quieres cambiarlo a **komvostudio**:
+
+1. Entra en **https://vercel.com** → abre tu proyecto.
+2. Ve a **Settings** (Configuración).
+3. En **Project Name** escribe el nuevo nombre: **komvostudio** (solo letras y números; sin guiones).
+4. Si aparece la **advertencia naranja** sobre *OpenID Connect (OIDC)*:
+   - Es normal. Solo afecta si usas OIDC con otro servicio (por ejemplo, CI/CD con tokens de Vercel).
+   - Si **solo** usas Vercel para desplegar desde GitHub y ver la web, **puedes ignorar la advertencia** y guardar.
+   - Si en el futuro usas OIDC con este proyecto, tendrás que actualizar la configuración de tu backend según la [documentación OIDC de Vercel](https://vercel.com/docs).
+5. Guarda los cambios. La URL de tu sitio pasará a ser **https://komvostudio.vercel.app** (o la que tengas configurada).

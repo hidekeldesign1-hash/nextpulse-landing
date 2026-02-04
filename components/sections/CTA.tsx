@@ -3,6 +3,7 @@
 import { forwardRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { AgendaModal } from "@/components/ui/AgendaModal";
 
 const BULLETS = [
   "Diseño claro",
@@ -22,8 +23,13 @@ const BULLETS = [
 
 const BULLET_DURATION_MS = 3200;
 
+/** Número de WhatsApp Business: código de país + número sin espacios (ej: 5215512345678) */
+const WHATSAPP_NUMBER = "525532584558";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
 export const CTA = forwardRef<HTMLElement>(function CTA(_, ref) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [agendaOpen, setAgendaOpen] = useState(false);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -56,24 +62,28 @@ export const CTA = forwardRef<HTMLElement>(function CTA(_, ref) {
         className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8"
       >
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-[2.75rem]">
-          ¿Listo para tener una página que sí represente tu negocio?
+          ¿Listo para dar una imagen más profesional y atraer clientes?
         </h2>
         <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-foreground sm:mt-6 sm:text-lg">
           Cuéntanos tu idea y te diremos cómo podemos ayudarte.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:mt-12 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
           <Link
-            href="mailto:hola@komvos.com"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex min-h-[48px] items-center justify-center rounded-full bg-black px-6 py-3.5 text-base font-medium text-white shadow-glow-sm transition-colors duration-200 hover:bg-[#D7C9B1] hover:text-black focus-visible:bg-[#D7C9B1] focus-visible:text-black dark:bg-accent dark:text-white dark:hover:bg-accent-hover dark:hover:text-white dark:focus-visible:bg-accent-hover dark:focus-visible:text-white sm:min-h-0 sm:px-8 sm:py-4"
           >
             Quiero empezar
           </Link>
-          <Link
-            href="#"
+          <button
+            type="button"
+            onClick={() => setAgendaOpen(true)}
             className="flex min-h-[48px] items-center justify-center rounded-full border border-border-strong bg-surface px-6 py-3.5 text-base font-medium text-foreground transition-all hover:bg-surface-elevated hover:border-muted-soft/30 sm:min-h-0 sm:px-8 sm:py-4"
           >
             Agendar llamada
-          </Link>
+          </button>
+            <AgendaModal open={agendaOpen} onClose={() => setAgendaOpen(false)} />
         </div>
         <p className="mt-8 text-sm text-foreground sm:mt-10">
           Te respondemos pronto.
@@ -83,10 +93,10 @@ export const CTA = forwardRef<HTMLElement>(function CTA(_, ref) {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 md:mt-24">
           <div className="rounded-2xl border border-border bg-muted/40 px-6 py-8 shadow-[0_0_24px_-4px_var(--accent-glow)] backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:px-8 sm:py-10 md:px-10 md:py-12">
             <p className="mx-auto max-w-lg text-center text-base leading-relaxed text-foreground sm:text-lg">
-              No hacemos páginas solo para verse bonitas.
+              Nuestro enfoque es práctico y profesional.
               <br className="hidden sm:inline" />{" "}
               <span className="mt-2 block sm:mt-1 sm:inline">
-                Diseñamos páginas que explican tu negocio, guían al usuario y generan acción.
+                Trabajamos con negocios que quieren crecer con una presencia digital bien hecha.
               </span>
             </p>
           </div>

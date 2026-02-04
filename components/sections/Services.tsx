@@ -6,9 +6,9 @@ import { ImagePlaceholder } from "../ui/ImagePlaceholder";
 
 const services = [
   {
-    title: "Tu negocio con presencia profesional",
+    title: "Presencia profesional en internet",
     description:
-      "Creamos diseños atractivos y profesionales que generan confianza en tus clientes desde el primer vistazo.",
+      "Creamos páginas web claras y bien estructuradas para que tu negocio se vea serio, confiable y fácil de contactar.",
     icon: "◆",
     image: "/servicio-presencia-profesional.png",
     imagePosition: "15%",
@@ -16,15 +16,15 @@ const services = [
   {
     title: "Anuncios que traen clientes",
     description:
-      "Creamos campañas simples y efectivas para que más personas te contacten y conozcan tu negocio.",
+      "Diseñamos y gestionamos publicidad para que personas interesadas te escriban o te llamen, no solo para que vean tu marca.",
     icon: "◇",
     image: "/servicio-anuncios-clientes.png",
     imagePosition: "60%",
   },
   {
-    title: "Tu negocio visible en internet",
+    title: "Tu negocio visible para las personas correctas",
     description:
-      "Preparamos tu página y contenido para que las personas te encuentren fácilmente en internet.",
+      "Te ayudamos a que tu negocio aparezca frente a quienes realmente pueden convertirse en clientes.",
     icon: "○",
     image: "/servicio-negocio-visible-internet.png",
     imagePosition: "50%",
@@ -70,7 +70,7 @@ export function Services() {
             Cómo te ayudamos
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-foreground sm:mt-5 sm:text-base">
-            Te ayudamos a que tu negocio se vea bien y consiga más clientes.
+            Te ayudamos a que tu negocio se vea profesional, sea fácil de entender y atraiga clientes.
           </p>
         </motion.div>
         <motion.ul
